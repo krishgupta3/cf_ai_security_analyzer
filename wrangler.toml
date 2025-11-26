@@ -1,0 +1,15 @@
+name = "cf_ai_security_analyzer"
+main = "functions/analyze.js"
+compatibility_date = "2024-10-01"
+
+[ai]
+binding = "AI"
+
+[durable_objects]
+bindings = [
+  { name = "SECURITY_STATE", class_name = "MemoryObject" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["MemoryObject"]
