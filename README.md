@@ -27,5 +27,4 @@ All results are stored in a **Durable Object** for persistent state and historic
 
 ## Access the Project
 
-You can access the live project via:
-
+You can access the live project via: https://cf-ai-security-analyzer.krishgupta497.workers.dev/?input=<YOUR_LINK_OR_CODE>
