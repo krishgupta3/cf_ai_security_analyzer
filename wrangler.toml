@@ -1,15 +1,17 @@
-name = "cf_ai_security_analyzer"
+name = "cf-ai-security-analyzer"
 main = "functions/analyze.js"
-compatibility_date = "2024-10-01"
+compatibility_date = "2024-11-26"
 
+# Fix: Use single object syntax for AI binding
 [ai]
 binding = "AI"
 
-[durable_objects]
-bindings = [
-  { name = "SECURITY_STATE", class_name = "MemoryObject" }
-]
+[[durable_objects.bindings]]
+name = "SECURITY_STATE"
+class_name = "MemoryObject"
+script_name = "cf-ai-security-analyzer"
 
+# Migration for free plan support
 [[migrations]]
 tag = "v1"
-new_classes = ["MemoryObject"]
+new_sqlite_classes = ["MemoryObject"]
